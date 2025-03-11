@@ -38,6 +38,46 @@
         .delay-1 { animation-delay: 0.5s; }
         .delay-2 { animation-delay: 1s; }
         .delay-3 { animation-delay: 1.5s; }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .carousel-text h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .carousel-text p {
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -53,6 +93,38 @@
             </ul>
         </div>
     </nav>
+
+        <!-- Carrusel de Imágenes con Texto -->
+        <div class="carousel">
+            <div class="carousel-inner">
+                <!-- Imagen 1 -->
+                <div class="carousel-item">
+                    <img src="images/taylor-flowe.jpg" alt="Estudiantes usando tecnología">
+                    <div class="carousel-text">
+                        <h2>Transforma la Educación</h2>
+                        <p>Gestiona tu institución académica de manera eficiente con e-Magisterium.</p>
+                    </div>
+                </div>
+                <!-- Imagen 2 -->
+                <div class="carousel-item">
+                    <img src="images/cdc.jpg" alt="Aula virtual">
+                    <div class="carousel-text">
+                        <h2>Plataforma en la Nube</h2>
+                        <p>Accede a tu sistema desde cualquier lugar y en cualquier momento.</p>
+                    </div>
+                </div>
+                <!-- Imagen 3 -->
+                <div class="carousel-item">
+                    <img src="images/sofatutor.jpg" alt="Educación en línea">
+                    <div class="carousel-text">
+                        <h2>Comunicación Integrada</h2>
+                        <p>Mantén una comunicación fluida entre profesores, estudiantes y padres.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
 
     <!-- Hero Section -->
     <section class="bg-blue-600 text-white py-20">
@@ -147,5 +219,20 @@
         </div>
     </footer>
 
+    <!-- Script para el Carrusel -->
+    <script>
+        let currentIndex = 0;
+        const carouselInner = document.querySelector('.carousel-inner');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        function moveToNextSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Cambia de imagen cada 5 segundos
+        setInterval(moveToNextSlide, 5000);
+    </script>
 </body>
 </html>
