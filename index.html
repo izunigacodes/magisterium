@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-Magisterium - Sistema Académico en la Nube</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         /* Animaciones personalizadas */
@@ -78,6 +79,16 @@
         .carousel-text p {
             font-size: 1.2rem;
         }
+         /* Efecto de zoom */
+         .zoom-effect {
+            transition: transform 0.3s ease-in-out;
+        }
+        .zoom-effect:hover {
+            transform: scale(1.05); /* Aumenta el tamaño al 105% */
+        }
+        .logo {
+            filter: brightness(0) invert(1);
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -85,11 +96,12 @@
     <!-- Navbar -->
     <nav class="bg-blue-600 p-4 text-white">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold slide-in-left">e-Magisterium</a>
+            
+            <a href="#" class="slide-in-left"><img src="images/logo4.png" alt="Logo"   /></a>
             <ul class="flex space-x-4 slide-in-right">
-                <li><a href="#features" class="hover:text-gray-200">Características</a></li>
-                <li><a href="#pricing" class="hover:text-gray-200">Precios</a></li>
-                <li><a href="#contact" class="hover:text-gray-200">Contacto</a></li>
+                <li class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500"><a href="#features" class="hover:text-gray-200">Características</a></li>
+                <li class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500"><a href="#pricing" class="hover:text-gray-200">Precios</a></li>
+                <li class="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500"><a href="#contact" class="hover:text-gray-200">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -162,6 +174,9 @@
             <h2 class="text-3xl font-bold mb-8 fade-in delay-1">Planes y Precios</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg fade-in delay-2">
+                    <div class="zoom-effect overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://images.pexels.com/photos/4144225/pexels-photo-4144225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Planes y Precios" class="w-full h-auto">
+                    </div>
                     <h3 class="text-xl font-bold mb-4">Básico</h3>
                     <p class="text-2xl font-bold mb-4">$29/mes</p>
                     <ul class="text-left">
